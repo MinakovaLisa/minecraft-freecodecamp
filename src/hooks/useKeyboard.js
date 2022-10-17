@@ -5,7 +5,7 @@ function actionByKey(key) {
     KeyW: "moveForward",
     KeyS: "moveBack",
     KeyA: "moveLeft",
-    keyD: "moveRight",
+    KeyD: "moveRight",
     Space: "jump",
     Digit1: "dirt",
     Digit2: "grass",
@@ -24,11 +24,11 @@ export const useKeyboard = () => {
     moveLeft: false,
     moveRight: false,
     jump: false,
-    texture1: false,
-    texture2: false,
-    texture3: false,
-    texture4: false,
-    texture5: false,
+    dirt: false,
+    grass: false,
+    glass: false,
+    wood: false,
+    log: false,
   });
 
   const handleKeyDown = useCallback((e) => {
@@ -58,6 +58,7 @@ export const useKeyboard = () => {
   useEffect(() => {
     document.addEventListener("keydown", handleKeyDown);
     document.addEventListener("keyup", handleKeyUp);
+
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
       document.removeEventListener("keyup", handleKeyUp);
